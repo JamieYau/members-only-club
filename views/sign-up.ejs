@@ -7,11 +7,26 @@
   </head>
   <body>
     <h1>Cryptic Club | <%=title%></h1>
-    <form action="/sign-up" method="POST">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
+    <form method="post">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        minlength="3"
+        maxlength="30"
+      />
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="8"
+      />
+
       <input type="submit" value="Sign Up" />
     </form>
   </body>

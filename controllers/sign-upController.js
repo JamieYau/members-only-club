@@ -1,7 +1,5 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/UserModel");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
 
 // GET sign-up page
