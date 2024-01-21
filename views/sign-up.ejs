@@ -28,6 +28,9 @@
       />
 
       <input type="submit" value="Sign Up" />
+      <% if (error) { %>
+      <p style="color: red"><%= error %></p>
+      <% } %>
     </form>
   </body>
 </html>

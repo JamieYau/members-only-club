@@ -10,12 +10,21 @@ exports.getSignUpPage = (req, res, next) => {
 // POST sign-up page
 exports.postSignUpPage = asyncHandler(async (req, res, next) => {
   const { username, password } = req.body;
+
+  // Check if username already exists
+  const existingUser = await User.findOne({ username });
+  if (existingUser) {
+    return res
+      .status(400)
+      .render("sign-up", {
+        title: "Sign Up",
+        error: "Username is already taken",
+      });
+  }
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const user = await User.create({
-    username,
-    password: hashedPassword,
-  });
+  const user = await User.create({ username, password: hashedPassword });
 
   res.redirect("/");
 });
