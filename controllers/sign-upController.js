@@ -11,6 +11,26 @@ exports.getSignUpPage = (req, res, next) => {
 exports.postSignUpPage = asyncHandler(async (req, res, next) => {
   const { username, password } = req.body;
 
+  // Check for empty fields
+  if (!username || !password) {
+    return res
+      .status(400)
+      .render("sign-up", {
+        title: "Sign Up",
+        error: "All fields are required",
+      });
+  }
+
+  // Check password length
+  if (password.length < 8) {
+    return res
+      .status(400)
+      .render("sign-up", {
+        title: "Sign Up",
+        error: "Password must be at least 8 characters long",
+      });
+  }
+
   // Check if username already exists
   const existingUser = await User.findOne({ username });
   if (existingUser) {
