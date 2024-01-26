@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 // GET sign-up page
 exports.getSignUpPage = (req, res, next) => {
-  res.render("sign-up", { title: "Sign Up" });
+  res.render("sign-up", { title: "Sign Up", error: null });
 };
 
 // POST sign-up page
