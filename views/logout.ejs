@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logout</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <div class="logout-container">
+        <% if (currentUser) { %>
+        <h1>Goodbye, <%= currentUser.username %>!</h1>
+        <p>You have been successfully logged out.</p>
+        <% } else { %>
+        <h1>Logout</h1>
+        <p>You are not currently logged in.</p>
+        <% } %>
+        <p><a href="/">Go back to the home page</a></p>
+      </div>
+    </main>
+  </body>
+</html>
