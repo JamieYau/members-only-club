@@ -42,6 +42,9 @@ li {
 a {
   text-decoration: none;
   color: var(--headline-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .primary-btn {
@@ -85,4 +88,6 @@ a {
   padding: 0.75em 1.5em;
 }
 
-
+main {
+  padding: 3rem;
+}
