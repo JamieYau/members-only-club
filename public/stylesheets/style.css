@@ -23,7 +23,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: var(--background-color);
   color: var(--primary-color);
-  padding: 0 3rem;
 }
 
 h1,
@@ -65,6 +64,8 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0rem;
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+  padding: 1rem 3rem;
 }
 
 #header-links {
@@ -83,3 +84,5 @@ a {
 .header-link a {
   padding: 0.75em 1.5em;
 }
+
+

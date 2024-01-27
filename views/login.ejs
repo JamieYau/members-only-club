@@ -7,31 +7,34 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Cryptic Club | <%=title%></h1>
-    <form method="post">
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        required
-        minlength="3"
-        maxlength="30"
-      />
+    <%- include ("partials/header") %>
+    <main>
+      <h1><%=title%></h1>
+      <form method="post">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          minlength="3"
+          maxlength="30"
+        />
 
-      <label for="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-        minlength="8"
-      />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+        />
 
-      <input type="submit" value="Login" />
-      <% if (error !== null) { %>
-      <p style="color: red"><%= error %></p>
-      <% } %>
-    </form>
+        <input type="submit" value="Login" />
+        <% if (error !== null) { %>
+        <p style="color: red"><%= error %></p>
+        <% } %>
+      </form>
+    </main>
   </body>
 </html>

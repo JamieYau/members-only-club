@@ -6,11 +6,12 @@
   </head>
   <body>
     <%- include ("partials/header") %>
-    <% if (currentUser) {%>
+    <main>
+      <% if (currentUser) {%>
       <h1>YOU ARE LOGGED IN: <%= currentUser.username %></h1>
-    <% }
-    else { %>
+      <% } else { %>
       <h1>LOGIN</h1>
-    <%}%>
+      <%}%>
+    </main>
   </body>
 </html>
