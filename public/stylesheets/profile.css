@@ -19,7 +19,7 @@
 }
 
 .profile-name {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .roles-container {
@@ -27,21 +27,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .role-heading {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .roles-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.3em;
+  gap: 1em;
 }
 
 .role {
-  padding: 0.2em 0.5em;
-  background: var(--button-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em 0.5em;
   border-radius: 5px;
+}
+
+.user-role {
+  background: transparent;
+  border: 2px solid var(--button-bg-color);
+  color: var(--button-bg-color);
+}
+
+.member-role {
+  background: rgb(40, 240, 193);
+  border: 2px solid rgb(40, 240, 193);
+  color: var(--stroke-color);
+}
+
+.admin-role {
+  background: rgb(255, 120, 120);
+  border: 2px solid rgb(255, 120, 120);
+  color: var(--stroke-color);
 }

@@ -14,7 +14,7 @@ router.get("/logout", (req, res, next) => {
       return next(err);
     }
     // Render the logout page
-    res.render("logout");
+    res.render("logout", {title: "Logout"});
   });
 });
 
