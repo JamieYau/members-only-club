@@ -9,6 +9,7 @@
   --highlight-color: #eebbc3;
   --secondary-color: #fffffe;
   --tertiary-color: #eebbc3;
+  --shadow-color: rgba(0,0,0,0.5);
 }
 
 * {
@@ -18,6 +19,7 @@
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -67,7 +69,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0rem;
-  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 -6px 10px 5px var(--shadow-color);
   padding: 1rem 3rem;
 }
 
@@ -89,5 +91,6 @@ a {
 }
 
 main {
+  flex: 1;
   padding: 3rem;
 }

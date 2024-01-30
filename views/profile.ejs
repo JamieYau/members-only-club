@@ -4,26 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cryptic Club | <%=title%></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
   </head>
   <body>
     <%- include ("partials/header") %>
-    <main>
-      <h1>Profile Page</h1>
+    <main class="profile-main">
       <div class="profile-info">
-        <h2>Hi, <%= currentUser.username %></h2>
+        <h2 class="profile-name">Hi, <%= currentUser.username %></h2>
         <div class="roles-container">
-          <h3>roles</h3>
+          <h3 class="role-heading">Roles:</h3>
           <ul class="roles-list">
-            <li>User</li>
+            <li class="user-role role">User</li>
             <% if (currentUser.membershipStatus) {%>
-            <li>Member</li>
+            <li class="member-role role">Member</li>
             <% } %> <% if (currentUser.admin) {%>
-            <li>Admin</li>
+            <li class="admin-role role">Admin</li>
             <% } %>
           </ul>
         </div>
-        
       </div>
     </main>
   </body>
