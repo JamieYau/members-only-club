@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptic Club | <%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main>
+      <h1>Profile Page</h1>
+      <div class="profile-info">
+        <h2>Hi, <%= currentUser.username %></h2>
+        <div class="roles-container">
+          <h3>roles</h3>
+          <ul class="roles-list">
+            <li>User</li>
+            <% if (currentUser.membershipStatus) {%>
+            <li>Member</li>
+            <% } %> <% if (currentUser.admin) {%>
+            <li>Admin</li>
+            <% } %>
+          </ul>
+        </div>
+        
+      </div>
+    </main>
+  </body>
+</html>

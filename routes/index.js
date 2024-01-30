@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Cryptic Club' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Cryptic Club" });
 });
 
 // GET logout page.
@@ -16,6 +16,11 @@ router.get("/logout", (req, res, next) => {
     // Render the logout page
     res.render("logout");
   });
+});
+
+// GET profile page
+router.get("/profile", (req, res, next) => {
+  res.render("profile", {title: "Profile"});
 });
 
 module.exports = router;
