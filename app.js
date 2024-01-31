@@ -12,6 +12,7 @@ const mongoose = require("mongoose");
 const indexRouter = require("./routes/index");
 const signupRouter = require("./routes/sign-up");
 const loginRouter = require("./routes/login");
+const profileRouter = require("./routes/profile")
 
 const app = express();
 
@@ -49,6 +50,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/sign-up", signupRouter);
 app.use("/login", loginRouter);
+app.use("/profile", profileRouter)
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {

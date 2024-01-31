@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptic Club | <%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main class="profile-main">
+      <div class="profile-info">
+        <h2 class="profile-name">Hi, <%= currentUser.username %></h2>
+        <div class="roles-container">
+          <h3 class="role-heading">Roles:</h3>
+          <ul class="roles-list">
+            <li class="user-role role">User</li>
+            <% if (currentUser.membershipStatus) {%>
+            <li class="member-role role">Member</li>
+            <% } %> <% if (currentUser.admin) {%>
+            <li class="admin-role role">Admin</li>
+            <% } %>
+          </ul>
+        </div>
+        <% if (!currentUser.membershipStatus) {%>
+        <form id="member-form" method="post">
+          <input type="text" name="secret" placeholder="Enter Secret Code" />
+          <input type="submit" value="Check" />
+        </form>
+        <% } %>
+        <button class="primary-btn"><a href="/logout">Logout</a></button>
+      </div>
+    </main>
+  </body>
+</html>
