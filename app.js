@@ -14,6 +14,8 @@ const signupRouter = require("./routes/sign-up");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile")
 
+const Message = require("./models/Message")
+
 const app = express();
 
 // connect to database
@@ -82,6 +84,27 @@ passport.deserializeUser(async (id, done) => {
     done(err);
   }
 });
+
+// Add a test message
+const addTestMessage = async () => {
+  try {
+    const testMessage = new Message({
+      title: "Test Message",
+      text: "This is a test message.",
+      // Assuming you have a valid user ID, replace the following line with a valid user ID
+      author: "65b9befb4a92e024df5973e9",
+    });
+
+    await testMessage.save();
+    console.log("Test message added successfully!");
+  } catch (err) {
+    console.error("Error adding test message:", err);
+  }
+};
+
+// Call the function to add the test message
+//addTestMessage();
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

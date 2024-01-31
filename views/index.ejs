@@ -11,7 +11,14 @@
     <main>
       <% if (currentUser) {%>
       <h1>YOU ARE LOGGED IN: <%= currentUser.username %></h1>
-      <% } else { %>
+      <% messages.forEach(message => { %>
+      <div class="message">
+        <h3><%= message.title %></h3>
+        <p><%= message.text %></p>
+        <p>Author: <%= message.author.username %></p>
+        <p>Timestamp: <%= message.timestamp %></p>
+      </div>
+      <% }); %> <% } else { %>
       <h1>LOGIN REQUIRED</h1>
       <%}%>
     </main>
