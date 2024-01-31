@@ -127,5 +127,11 @@ button a {
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 3rem;
+}
+
+.message-board {
+  flex: 1;
 }
