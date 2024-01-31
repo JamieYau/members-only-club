@@ -5,6 +5,8 @@ const indexController = require("../controllers/indexController")
 /* GET home page. */
 router.get("/", indexController.getIndexPage);
 
+router.post("/create-message", indexController.createMessage)
+
 // GET logout page.
 router.get("/logout", (req, res, next) => {
   // Log out the user

@@ -7,3 +7,11 @@ exports.getIndexPage = asyncHandler(async (req, res, next) => {
 
   res.render("index", { title: "Cryptic Club", messages });
 });
+
+// POST create message
+exports.createMessage = asyncHandler(async (req, res, next) => {
+  const { title, text } = req.body;
+  const author = req.user._id;
+  const newMessage = await Message.create({ title, text, author });
+  res.redirect("/");
+});
