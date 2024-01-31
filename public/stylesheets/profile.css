@@ -62,15 +62,3 @@
   border: 2px solid rgb(255, 120, 120);
   color: var(--stroke-color);
 }
-
-#member-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-}
-
-#member-form > button{
-    
-}

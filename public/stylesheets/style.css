@@ -58,11 +58,28 @@ input {
   border-radius: 5px;
 }
 
-button[type="submit"] {
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+form > * {
+  width: 100%;
+}
+
+form > label {
+  text-align: start;
+}
+
+input[type="submit"] {
   padding: 0.75em 1.5em;
   border-radius: 5px;
   border: none;
   background: var(--paragraph-color);
+  color: var(--background-color);
 }
 
 .primary-btn {
