@@ -20,7 +20,6 @@
           minlength="3"
           maxlength="30"
         />
-
         <label for="password">Password:</label>
         <input
           type="password"
@@ -29,7 +28,14 @@
           required
           minlength="8"
         />
-
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+          minlength="8"
+        />
         <input type="submit" value="Sign Up" />
         <% if (error !== null) { %>
         <p style="color: red"><%= error %></p>
