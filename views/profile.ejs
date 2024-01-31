@@ -22,6 +22,16 @@
             <% } %>
           </ul>
         </div>
+        <% if (!currentUser.membershipStatus) {%>
+        <form id="member-form" action="post">
+          <input
+            type="text"
+            name="secret"
+            placeholder="Enter Secret Code Here"
+          />
+          <button type="submit">Check</button>
+        </form>
+        <% } %>
         <button class="primary-btn"><a href="/logout">Logout</a></button>
       </div>
     </main>

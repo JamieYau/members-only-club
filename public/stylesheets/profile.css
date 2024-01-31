@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
   border: 1px solid #434343;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px var(--shadow-color);
@@ -18,16 +19,11 @@
   padding: 2em;
 }
 
-.profile-name {
-  margin-bottom: 1em;
-}
-
 .roles-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2em;
 }
 
 .role-heading {
@@ -65,4 +61,16 @@
   background: rgb(255, 120, 120);
   border: 2px solid rgb(255, 120, 120);
   color: var(--stroke-color);
+}
+
+#member-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#member-form > button{
+    
 }

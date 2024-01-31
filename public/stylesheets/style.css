@@ -9,7 +9,7 @@
   --highlight-color: #eebbc3;
   --secondary-color: #fffffe;
   --tertiary-color: #eebbc3;
-  --shadow-color: rgba(0,0,0,0.5);
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -33,7 +33,8 @@ h3 {
   color: var(--headline-color);
 }
 
-p, label {
+p,
+label {
   color: var(--paragraph-color);
 }
 
@@ -47,6 +48,21 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input {
+  background-color: transparent;
+  color: var(--paragraph-color);
+  padding: 0.25em 0.5em;
+  border: 2px solid var(--paragraph-color);
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  border: none;
+  background: var(--paragraph-color);
 }
 
 .primary-btn {
@@ -78,7 +94,8 @@ a {
   gap: 1em;
 }
 
-.header-link, button {
+.header-link,
+button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +103,8 @@ a {
   font-weight: 700;
 }
 
-.header-link a, button a {
+.header-link a,
+button a {
   padding: 0.75em 1.5em;
 }
 
