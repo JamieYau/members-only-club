@@ -23,13 +23,9 @@
           </ul>
         </div>
         <% if (!currentUser.membershipStatus) {%>
-        <form id="member-form" action="post">
-          <input
-            type="text"
-            name="secret"
-            placeholder="Enter Secret Code Here"
-          />
-          <input type="submit" value="Check">
+        <form id="member-form" method="post">
+          <input type="text" name="secret" placeholder="Enter Secret Code" />
+          <input type="submit" value="Check" />
         </form>
         <% } %>
         <button class="primary-btn"><a href="/logout">Logout</a></button>

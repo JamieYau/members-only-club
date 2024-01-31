@@ -18,9 +18,4 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
-// GET profile page
-router.get("/profile", (req, res, next) => {
-  res.render("profile", {title: "Profile"});
-});
-
 module.exports = router;
