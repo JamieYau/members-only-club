@@ -5,7 +5,7 @@
   --button-bg-color: #eebbc3;
   --button-text-color: #232946;
   --stroke-color: #121629;
-  --main-color: #b8c1ec;
+  --main-color: #d4d8f0;
   --highlight-color: #eebbc3;
   --secondary-color: #fffffe;
   --tertiary-color: #eebbc3;
@@ -149,6 +149,35 @@ main {
   padding: 0.5em;
 }
 
-.message > * {
-  color: var(--secondary-color);
+.message * {
+  color: var(--background-color);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #a6b2ef;
+  margin-bottom: 0.5em;
+}
+
+.message-title {
+  font-size: 1.3rem;
+}
+
+.message-time-ago {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.message-author {
+  margin-bottom: 0.5em;
+}
+
+.author-name {
+  background-color: var(--secondary-color);
+  padding: 2px;
+  border-radius: 5px;
 }

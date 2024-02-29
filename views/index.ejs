@@ -14,10 +14,12 @@
       <ul class="message-board">
         <% messages.forEach(message => { %>
         <li class="message">
-          <h3><%= message.title %></h3>
-          <p><%= message.text %></p>
-          <p>Author: <%= message.author.username %></p>
-          <p><%= message.timeAgo %></p>
+          <div class="message-header">
+            <h3 class="message-title"><%= message.title %></h3>
+            <span class="message-time-ago"><%= message.timeAgo %></span>
+          </div>
+          <p class="message-author">by <i class="author-name"><%= message.author.username %></i></p>
+          <p class="message-text"><%= message.text %></p>
         </li>
         <% }); %>
       </ul>
