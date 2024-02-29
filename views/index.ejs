@@ -9,16 +9,23 @@
   <body>
     <%- include ("partials/header") %>
     <main>
-      <% if (currentUser) {%>
+      <% if (currentUser) { %>
       <h1 class="message-board-header">Message Board</h1>
       <ul class="message-board">
         <% messages.forEach(message => { %>
         <li class="message">
           <div class="message-header">
             <h3 class="message-title"><%= message.title %></h3>
-            <span class="message-time-ago"><%= message.timeAgo %></span>
+            <span class="message-time-ago">
+              <% if (currentUser.membershipStatus) { %> <%= message.timeAgo %>
+              <% } else { %> ■■■■■■ <% } %>
+            </span>
           </div>
-          <p class="message-author">by <i class="author-name"><%= message.author.username %></i></p>
+          <p class="message-author">
+            by <% if (currentUser.membershipStatus) { %>
+            <i class="author-name"><%=message.author.username %></i><% } else {%>
+            <i class="author-name hidden"> %> ■■■■■■ <% } %> </i>
+          </p>
           <p class="message-text"><%= message.text %></p>
         </li>
         <% }); %>
@@ -34,7 +41,7 @@
       </form>
       <% } else { %>
       <h1>LOGIN REQUIRED</h1>
-      <%}%>
+      <% } %>
     </main>
   </body>
 </html>

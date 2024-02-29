@@ -11,6 +11,8 @@ exports.getIndexPage = asyncHandler(async (req, res, next) => {
     message.timeAgo = utils.calculateTimeAgo(message.timestamp);
   });
 
+  console.log(req.user)
+
   res.render("index", { title: "Cryptic Club", messages });
 });
 
