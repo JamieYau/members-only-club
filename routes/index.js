@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const indexController = require("../controllers/indexController")
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Cryptic Club" });
-});
+router.get("/", indexController.getIndexPage);
+
+router.post("/create-message", indexController.createMessage)
 
 // GET logout page.
 router.get("/logout", (req, res, next) => {

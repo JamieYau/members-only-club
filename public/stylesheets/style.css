@@ -5,7 +5,7 @@
   --button-bg-color: #eebbc3;
   --button-text-color: #232946;
   --stroke-color: #121629;
-  --main-color: #b8c1ec;
+  --main-color: #d4d8f0;
   --highlight-color: #eebbc3;
   --secondary-color: #fffffe;
   --tertiary-color: #eebbc3;
@@ -19,12 +19,28 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: var(--background-color);
   color: var(--primary-color);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--highlight-color);
+  border-radius: 9px;
+  border: 5px solid transparent;
+  background-clip: content-box;
 }
 
 h1,
@@ -127,5 +143,59 @@ button a {
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 3rem;
+}
+
+.message-board-header {
+  margin-bottom: 0.5em;
+}
+
+.message-board {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.message {
+  background: var(--main-color);
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.message * {
+  color: var(--background-color);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #a6b2ef;
+  margin-bottom: 0.5em;
+}
+
+.message-title {
+  font-size: 1.3rem;
+}
+
+.message-time-ago {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.message-author {
+  margin-bottom: 0.5em;
+}
+
+.author-name:not(.hidden) {
+  background-color: var(--secondary-color);
+  padding: 2px;
+  border-radius: 5px;
 }

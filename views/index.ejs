@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/index.js" defer></script>
   </head>
   <body>
     <%- include ("partials/header") %>
     <main>
-      <% if (currentUser) {%>
-      <h1>YOU ARE LOGGED IN: <%= currentUser.username %></h1>
+      <% if (currentUser) { %>
+      <h1 class="message-board-header">Message Board</h1>
+      <ul class="message-board">
+        <% messages.forEach(message => { %>
+        <li class="message">
+          <div class="message-header">
+            <h3 class="message-title"><%= message.title %></h3>
+            <span class="message-time-ago">
+              <% if (currentUser.membershipStatus) { %> <%= message.timeAgo %>
+              <% } else { %> ■■■■■■ <% } %>
+            </span>
+          </div>
+          <p class="message-author">
+            by <% if (currentUser.membershipStatus) { %>
+            <i class="author-name"><%=message.author.username %></i><% } else {%>
+            <i class="author-name hidden"> %> ■■■■■■ <% } %> </i>
+          </p>
+          <p class="message-text"><%= message.text %></p>
+        </li>
+        <% }); %>
+      </ul>
+      <form method="post" action="/create-message">
+        <label for="title">Title:</label>
+        <input type="text" name="title" required />
+
+        <label for="text">Text:</label>
+        <textarea name="text" required></textarea>
+
+        <input type="submit" value="Create Message" />
+      </form>
       <% } else { %>
       <h1>LOGIN REQUIRED</h1>
-      <%}%>
+      <% } %>
     </main>
   </body>
 </html>
