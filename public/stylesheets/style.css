@@ -19,7 +19,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -137,11 +137,14 @@ main {
 }
 
 .message-board {
+  overflow-y: auto;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
+
+
 
 .message {
   background: var(--main-color);
