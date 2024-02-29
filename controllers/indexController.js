@@ -1,9 +1,15 @@
 const asyncHandler = require("express-async-handler");
 const Message = require("../models/Message");
+const utils = require("../utils/utils");
 
 // GET index page
 exports.getIndexPage = asyncHandler(async (req, res, next) => {
   const messages = await Message.find().populate("author");
+
+  // Calculate "time ago" for each message
+  messages.forEach((message) => {
+    message.timeAgo = utils.calculateTimeAgo(message.timestamp);
+  });
 
   res.render("index", { title: "Cryptic Club", messages });
 });
