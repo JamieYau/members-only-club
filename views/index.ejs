@@ -10,7 +10,7 @@
     <%- include ("partials/header") %>
     <main>
       <% if (currentUser) {%>
-      <h1>Message Board</h1>
+      <h1 class="message-board-header">Message Board</h1>
       <ul class="message-board">
         <% messages.forEach(message => { %>
         <li class="message">
